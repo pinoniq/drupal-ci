@@ -20,6 +20,6 @@ jobs:
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag pinoniq/drupal-ci:$(date +%s)
+      run: docker build . --file Dockerfile --tag pinoniq/drupal-ci:latest
     - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USER}}/drupal-ci
+      run: docker push ${{secrets.DOCKER_USER}}/drupal-ci:latest
