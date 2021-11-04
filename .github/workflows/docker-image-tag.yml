@@ -1,7 +1,10 @@
-name: Docker Image CI
+name: Docker Image TAG CI
 
 on:
   push:
+    tags:
+      - 'v*.*.*'
+  create:
     tags:
       - 'v*.*.*'
 
